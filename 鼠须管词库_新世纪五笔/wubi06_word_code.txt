@@ -11341,6 +11341,7 @@
 哤   kdny
 咴   kdoy
 哒   kdpy
+哒   kdp
 嚦   kdth
 㕦   kdu
 嘹   kdu
@@ -12037,8 +12038,9 @@
 呮   kkwy
 喌   kkyh
 喂   kl
+嗯   kl
 嘓   klag
-咽   kld
+咽   kldk
 嗯   kldn
 咽   kldy
 喟   kle
