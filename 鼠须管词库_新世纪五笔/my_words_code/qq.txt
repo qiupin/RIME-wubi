@@ -2731,6 +2731,7 @@
 参考	cdft
 上手	hgrt
 乒乓球	rrgg
+乒乓	rgrg
 所迫	rnrp
 男妓	levf
 工会	aawf
@@ -29626,7 +29627,6 @@
 要好	svvb
 练队	xabw
 不回	dhlk
-女孩子	vbbb
 高歌猛进	ysqf
 火警	ooaq
 浓艳	ipdh
@@ -40877,7 +40877,6 @@
 烧麦	oagt
 杜比	sfxx
 废话	onyt
-出动	bmfc
 广告	oytf
 求你	giwq
 脸谱	ewyu
