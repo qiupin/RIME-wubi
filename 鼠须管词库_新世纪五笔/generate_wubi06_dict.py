@@ -60,6 +60,7 @@ class Wubi06Dict(object):
             os.mkdir(fdir_ok)
 
         CUSTOM_WORDS_CODE_DICT = {}
+        KOUJIE_CODE_LIST = []
 
         fs = os.listdir(fdir)
         for fpath in fs:
@@ -96,6 +97,10 @@ class Wubi06Dict(object):
 
                 code_string = ''.join(code)
                 line_ok = '{}\t{}\n'.format(line, code_string)
+
+                if words_len == 7 and fpath == 'koujie.txt':
+                #    code_string = code_string[:2]
+                    KOUJIE_CODE_LIST.append(line)
 
                 # add new word to dict
                 CUSTOM_WORDS_CODE_DICT[line] = code_string
@@ -135,7 +140,14 @@ class Wubi06Dict(object):
                             if word in self.WORD_WEIGHT:
                                 weight = 1
 
-                    if len(code) == 1:
+                    if word in KOUJIE_CODE_LIST:
+                        weight = 0
+                        print('word:', word, 'code', code)
+                        #f.write('{}\t{}\t{}\t{}\n'.format(
+                        #    word, code, weight, code[0]))
+                        f.write('{}\t{}\t{}\n'.format(
+                            word, code[0], weight))
+                    elif len(code) == 1:
                         if word in self.WORDS_SET:
                             weight = 0
                         elif weight == 0:  # 一级简码如果词频中没有设置为6000
@@ -168,8 +180,8 @@ def main():
     wubi.generate_words_code('./my_words')
     wubi.write_into_squirrel('./RIME/wubi06.dict.yaml')
 
-    if os.path.exists('/Users/tu/Library/Rime/'):
-        os.system('cp ./RIME/wubi06.dict.yaml /Users/tu/Library/Rime/')
+    #if os.path.exists('/Users/tu/Library/Rime/'):
+    #    os.system('cp ./RIME/wubi06.dict.yaml /Users/tu/Library/Rime/')
 
 
 if __name__ == '__main__':
